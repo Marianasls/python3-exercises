@@ -6,66 +6,65 @@
 # Google's Python Class
 # http://code.google.com/edu/languages/google-python-class/
 
-# Basic string exercises
-# Fill in the code for the functions below. main() is already set up
-# to call the functions with a few different inputs,
-# printing 'OK' when each function is correct.
-# The starter code for each function includes a 'return'
-# which is just a placeholder for your code.
-# It's ok if you do not complete all the functions, and there
-# are some additional functions to try in string2.py.
+# Exercícios básicos com string
+# Preencha o código das funções a seguir. main() está configurado
+# para chamar com várias entradas diferentes,
+# mostrando 'OK' quando cada função está correta.
+# O código inicial para cada função inclui um 'return'
+# que é só uma indicação onde seu código vai terminar.
+# Tudo bem se você não completar todas as funções. Há mais
+# funções adicionais para tentar no arquivo string2.py.
 
 
 # A. donuts
-# Given an int count of a number of donuts, return a string
-# of the form 'Number of donuts: <count>', where <count> is the number
-# passed in. However, if the count is 10 or more, then use the word 'many'
-# instead of the actual count.
-# So donuts(5) returns 'Number of donuts: 5'
-# and donuts(23) returns 'Number of donuts: many'
+# Dado um inteiro com o número de donuts, retorna uma string
+# do formato 'Number of donuts: <count>', onde <count> é o número
+# passado como entrada. Entretanto, se a número é 10 ou maior, então use a palavra 'many'
+# no lugar do número.
+# Por exemplo, donuts(5) retorna 'Number of donuts: 5'
+# e donuts(23) retorna 'Number of donuts: many'
 def donuts(count):
-  # +++your code here+++
+  # +++seu código aqui+++
   return
 
 
 # B. both_ends
-# Given a string s, return a string made of the first 2
-# and the last 2 chars of the original string,
-# so 'spring' yields 'spng'. However, if the string length
-# is less than 2, return instead the empty string.
+# Dado uma string s, retorna uma string feita com as duas primeiras
+# e as duas últimas letras da string original,
+# então 'spring' retorna 'spng'. Entretanto, se o cumprimeito da string
+# é menor que 2, retorne uma string vazia.
 def both_ends(s):
-  # +++your code here+++
+  # +++seu código aqui+++
   return
 
 
 # C. fix_start
-# Given a string s, return a string
-# where all occurences of its first char have
-# been changed to '*', except do not change
-# the first char itself.
-# e.g. 'babble' yields 'ba**le'
-# Assume that the string is length 1 or more.
-# Hint: s.replace(stra, strb) returns a version of string s
-# where all instances of stra have been replaced by strb.
+# Dado uma string s, retorne uma string
+# onde todas as ocorrências da primeira letra é alterada
+# para '*', exceto a primeira letra da string.
+# por exemplo, 'babble' retorna 'ba**le'
+# Assuma que a string tem tamanho 1 ou maior.
+# Dica: s.replace(stra, strb) retorna uma versão da string s
+# onde todas as instâncias de stra são substituídas por strb.
 def fix_start(s):
-  # +++your code here+++
+  # +++seu código aqui+++
   return
 
 
 # D. MixUp
-# Given strings a and b, return a single string with a and b separated
-# by a space '<a> <b>', except swap the first 2 chars of each string.
+# Dado as strings a e b, retorne uma única string com a e b separados
+# por um espaço '<a> <b>', exceto trocando as 2 primeiras letras de cada string.
 # e.g.
 #   'mix', pod' -> 'pox mid'
 #   'dog', 'dinner' -> 'dig donner'
-# Assume a and b are length 2 or more.
+# Assuma a e b tem tamanho 2 ou maior.
 def mix_up(a, b):
-  # +++your code here+++
+  # +++seu código aqui+++
   return
 
 
-# Provided simple test() function used in main() to print
-# what each function returns vs. what it's supposed to return.
+# Provê uma função simples test() usada em main() para mostrar
+# o que cada função retorna vs o que deveria retornar.
 def test(got, expected):
   if got == expected:
     prefix = ' OK '
@@ -74,11 +73,11 @@ def test(got, expected):
   print(('%s got: %s expected: %s' % (prefix, repr(got), repr(expected))))
 
 
-# Provided main() calls the above functions with interesting inputs,
-# using test() to check if each result is correct or not.
+# Função main() chama as outras funções com várias entradas,
+# usando test() para verificar se cada resultado está correto ou não.
 def main():
   print('donuts')
-  # Each line calls donuts, compares its result to the expected for that call.
+  
   test(donuts(4), 'Number of donuts: 4')
   test(donuts(9), 'Number of donuts: 9')
   test(donuts(10), 'Number of donuts: many')
