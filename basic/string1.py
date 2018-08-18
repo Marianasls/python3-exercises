@@ -24,9 +24,11 @@
 # Por exemplo, donuts(5) retorna 'Number of donuts: 5'
 # e donuts(23) retorna 'Number of donuts: many'
 def donuts(count):
-  # +++seu código aqui+++
-  return
-
+    s = 'Number of donuts: '
+    if count < 10:
+        return s + str(count)
+    else:
+        return s + 'many'
 
 # B. both_ends
 # Dado uma string s, retorna uma string feita com as duas primeiras
@@ -34,9 +36,10 @@ def donuts(count):
 # então 'spring' retorna 'spng'. Entretanto, se o cumprimeito da string
 # é menor que 2, retorne uma string vazia.
 def both_ends(s):
-  # +++seu código aqui+++
-  return
-
+    if len(s) < 2:
+        return ''
+    else:
+        return s[0:2] + s[len(s)-2:]
 
 # C. fix_start
 # Dado uma string s, retorne uma string
@@ -47,9 +50,7 @@ def both_ends(s):
 # Dica: s.replace(stra, strb) retorna uma versão da string s
 # onde todas as instâncias de stra são substituídas por strb.
 def fix_start(s):
-  # +++seu código aqui+++
-  return
-
+    return s[0] + s[1:].replace(s[0], '*')
 
 # D. MixUp
 # Dado as strings a e b, retorne uma única string com a e b separados
@@ -59,9 +60,7 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assuma a e b tem tamanho 2 ou maior.
 def mix_up(a, b):
-  # +++seu código aqui+++
-  return
-
+    return a.replace(a[0:2], b[0:2]) +' '+ b.replace(b[0:2], a[0:2])
 
 # Provê uma função simples test() usada em main() para mostrar
 # o que cada função retorna vs o que deveria retornar.
@@ -77,7 +76,7 @@ def test(got, expected):
 # usando test() para verificar se cada resultado está correto ou não.
 def main():
   print('donuts')
-  
+
   test(donuts(4), 'Number of donuts: 4')
   test(donuts(9), 'Number of donuts: 9')
   test(donuts(10), 'Number of donuts: many')
@@ -90,7 +89,7 @@ def main():
   test(both_ends('a'), '')
   test(both_ends('xyz'), 'xyyz')
 
-  
+
   print()
   print('fix_start')
   test(fix_start('babble'), 'ba**le')
