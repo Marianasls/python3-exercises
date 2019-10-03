@@ -1,52 +1,26 @@
-#!/usr/bin/python3 -tt
-# Copyright 2010 Google Inc.
-# Licensed under the Apache License, Version 2.0
-# http://www.apache.org/licenses/LICENSE-2.0
-
-# Google's Python Class
-# http://code.google.com/edu/languages/google-python-class/
-
-# Additional basic string exercises
-
-# D. verbing
-# Given a string, if its length is at least 3,
-# add 'ing' to its end.
-# Unless it already ends in 'ing', in which case
-# add 'ly' instead.
-# If the string length is less than 3, leave it unchanged.
-# Return the resulting string.
 def verbing(s):
-  # +++your code here+++
-  return
+    t = len(s)
+    if(t < 3): return s
+    nova = s + 'ly' if(s[t-3:t] == 'ing') else s + 'ing'
 
+    return nova
 
-# E. not_bad
-# Given a string, find the first appearance of the
-# substring 'not' and 'bad'. If the 'bad' follows
-# the 'not', replace the whole 'not'...'bad' substring
-# with 'good'.
-# Return the resulting string.
-# So 'This dinner is not that bad!' yields:
-# This dinner is good!
 def not_bad(s):
-  # +++your code here+++
-  return
+    a = s.find('not')
+    b = s.find('bad')
+    return s.replace(s[a:], 'good') + s[b+3:] if a < b else s  
 
+def front_back(aa, bb):
+    a = len(aa)
+    b = len(bb)
+    frontA = int(a/2) if a%2 == 0 else int(a/2 +1)
+    backA = int(a/2)
 
-# F. front_back
-# Consider dividing a string into two halves.
-# If the length is even, the front and back halves are the same length.
-# If the length is odd, we'll say that the extra char goes in the front half.
-# e.g. 'abcde', the front half is 'abc', the back half 'de'.
-# Given 2 strings, a and b, return a string of the form
-#  a-front + b-front + a-back + b-back
-def front_back(a, b):
-  # +++your code here+++
-  return
+    frontB = int(b/2) if b%2 == 0 else int(b/2 +1)
+    backB = int(b/2)
+    return aa[0:frontA] + bb[0:frontB] + aa[a-backA:] + bb[b-backB:]
+#a-front + b-front + a-back + b-back
 
-
-# Simple provided test() function used in main() to print
-# what each function returns vs. what it's supposed to return.
 def test(got, expected):
   if got == expected:
     prefix = ' OK '
@@ -54,9 +28,6 @@ def test(got, expected):
     prefix = '  X '
   print('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
 
-
-# main() calls the above functions with interesting inputs,
-# using the above test() to check if the result is correct or not.
 def main():
   print('verbing')
   test(verbing('hail'), 'hailing')
@@ -75,6 +46,7 @@ def main():
   test(front_back('abcd', 'xy'), 'abxcdy')
   test(front_back('abcde', 'xyz'), 'abcxydez')
   test(front_back('Kitten', 'Donut'), 'KitDontenut')
+
 
 if __name__ == '__main__':
   main()
